@@ -1,0 +1,33 @@
+body{ 
+	background: #2a2b38;
+	width:50%%;
+}
+
+header{
+	height: 10px;
+	margin: auto;
+}
+
+
+.setting-menu {
+	background:#16171c;
+	padding: 10px;
+}
+
+container-bg{
+	margin-top: 10px;
+}
+
+container-bg{
+	color: white;
+}
+
+img {
+	margin-bottom: 10px;
+	width: 100%;
+	min-height: 100px;
+}
+
+container-fluid{
+	background: #16171c;
+}
