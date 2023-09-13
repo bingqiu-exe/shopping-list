@@ -1,9 +1,8 @@
 from django.shortcuts import render
 
 def show_main(request):
-    context = {
-        'Name of Sponsor',
-        'Kim Dokja'
-    }
+    name = {'Kim Dokja'}
+    amount = {'Insert Amount of Sponsors.'}
 
-    return render(request, "main.html", context)
+
+    return render(request, "main.html", name, amount)
