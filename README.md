@@ -20,4 +20,8 @@ b. membuat sebuah fungsi yang menerima parameter request dengan nama show_xml da
 c. menambahkan return function berupa HttpResponse dan parameter content_type="application/xml" atau content_type="application/json"
  Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2:
 a. menambahkan path url ke dalam urlpatterns
-screenshot: https://drive.google.com/drive/folders/1YuOETgzWKvAGKTXfrHcOc6BoyNrPyv6r?usp=sharing
+screenshot:
+![image](https://github.com/bingqiu-exe/shopping-list/assets/113889689/55a53066-bfbe-4d49-86b6-4f791427c507)
+![image](https://github.com/bingqiu-exe/shopping-list/assets/113889689/0f74fdec-00c6-4e52-9724-45194a86bb5d)
+![image](https://github.com/bingqiu-exe/shopping-list/assets/113889689/ab744131-7617-4787-a73f-dec53389948d)
+![image](https://github.com/bingqiu-exe/shopping-list/assets/113889689/5085cbab-8348-4b88-af1a-009c17a089d1)
