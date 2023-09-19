@@ -7,4 +7,17 @@ TUTORIAL 2
 3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
  JSON memiliki format pertukaran data yang ringan untuk dibaca dan ditulis oleh manusia sehingga mudah untuk ditranslate oleh komputer.
 4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)
-   
+ Membuat input form untuk menambahkan objek model pada app sebelumnya:
+a. membuat berkas baru pada direktori main dengan nama forms.py
+b. menambahkan beberapa import pada view.py
+c. membuat fungsi baru dengan nama create_product pada berkas views.py yang menerima parameter request
+d. import fungsi create_product pada urls.py
+e. menambahkan path url ke dalam urlpatterns pada urls.py di main
+f. membuat berkas HTML baru dengan nama create_product.html
+ Tambahkan 5 fungsi views untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML by ID, dan JSON by ID:
+a. menambahkan import HttpResponse dan Serializer pada views.py
+b. membuat sebuah fungsi yang menerima parameter request dengan nama show_xml dan show_json dan variabel yang menyimpan hasil query data dalam product
+c. menambahkan return function berupa HttpResponse dan parameter content_type="application/xml" atau content_type="application/json"
+ Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2:
+a. menambahkan path url ke dalam urlpatterns
+screenshot: https://drive.google.com/drive/folders/1YuOETgzWKvAGKTXfrHcOc6BoyNrPyv6r?usp=sharing
