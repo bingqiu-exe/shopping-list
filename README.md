@@ -1,5 +1,5 @@
 # shopping-list
-TUTORIAL 2
+TUGAS 3
 1. Apa perbedaan antara form POST dan form GET dalam Django?
  Dalam metode pengiriman data, form POST digunakan untuk mengirim data ke server sedangkan form GET digunakan untuk membaca atau mengambil data dari web server.
 2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
@@ -25,3 +25,50 @@ screenshot:
 ![image](https://github.com/bingqiu-exe/shopping-list/assets/113889689/0f74fdec-00c6-4e52-9724-45194a86bb5d)
 ![image](https://github.com/bingqiu-exe/shopping-list/assets/113889689/ab744131-7617-4787-a73f-dec53389948d)
 ![image](https://github.com/bingqiu-exe/shopping-list/assets/113889689/5085cbab-8348-4b88-af1a-009c17a089d1)
+
+TUGAS 4
+1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
+   UserCreationForm adalah sebuah formulir yang digunakan untuk membuat proses pembuatan pengguna (user) lebih mudah dalam aplikasi web, dengan informasi seperti username, password, dan email. Kelebihan yang didapatkan dari UserCreationForm adalah mudah digunakan (membuat formulir tanpa harus menulis kode dari awal), validasi otomatis (validasi yang memastikan bahwa pengguna memasukkan informasi yang benar), konfigurasi kustom (kita dapat menyesuaikan UserCreationForm sesuai dengan kemauan kita), dan integrasi dengan django authentication (kita dapat dengan mudah mengelola authetication). Kekurangan yang ada pada UserCreationForm diantaranya adalah tampilan default tidak menarik dan tidak mendukung fitur lanjutan
+2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+   Autentikasi lebih mengarah pada proses yang memverifikasi identitas pengguna sebagai izin untuk memasuki aplikasi sedangkan otorisasi lebih mengarah pada proses yang melibatkan izin dan hak akses dari pengguna.
+3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+   Cookies merupakan mekanisme kecil yang menyimpan data di browser pengguna, pengelolaan data:
+   a) server akan membuat sesi baru untuk pengguna yang memasukin web yang menggunakan sesi django
+   b) cookies akan menyimpan data dari pengguna
+   c) django memberikan cookies session id pada pengguna
+   d) data sesi sesungguhnya disimpan pada server
+   e) browser mengirimkan kembali cookie dengan ID sesi ke server ketika pengguna membuat permintaan ke server
+   f) data sesi akan dihapus ketika sesi berakhir
+4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+   Harus, sebab ada cookies yang memiliki risiko seperti kebocoran informasi pribadi, cookie theft, dan tracking pengguna.
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+   Untuk membuat halaman registrasi:
+    Formulir:
+    1) dalam views.py import -> from django.shortcuts import redirect, from django.contrib.auth.forms import UserCreationForm, from django.contrib import messages
+    2) tambahkan fungsi register
+    3) buat HTML baru dengan nama register.html
+    4) dalam urls.py import -> from main.views import register
+    5) tambahkan path register
+    Login:
+    1) dalam view.py import -> from django.contrib.auth import authenticate, login
+    2) tambahkan fungsi login_user
+    3) buat HTML baru dengan nama login.html
+    4) dalam urls.py import -> from main.views import login_user
+    5) tambahkan path login
+    Logout:
+    1) dalam views.py import -> from django.contrib.auth import logout
+    2) tambahkan fungsi logout_user
+    3) tambah HTML di main.html di bawah add new product
+    4) dalam urls.py import -> from main.views import logout_user
+    5) tambahkan path logout
+    Cookies:
+    1) dalam views.py import -> import datetime, from django.http import HttpResponseRedirect, from django.urls import reverse
+    2) mengganti kode pada fungsi login_user
+    3) mengubah kode pada fungsi logout_user
+    4) tambahkan potongan kode pada HTML
+    Menghubungkan product dengan user:
+    1) pada models.py import -> from django.contrib.auth.models import User
+    2) tambahkan class Product(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    3) mengubah potongan kode pada fungsi create_product
+    4) mengubah fungsi show_main
