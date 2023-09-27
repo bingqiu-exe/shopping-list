@@ -22,7 +22,7 @@ def show_main(request):
         'name': request.user.username, # Nama kamu
         'class': 'PBP B', # Kelas PBP kamu
         'products': products,
-        'last_login': request.COOKIES['last_login'],
+        'last_login': request.COOKIES['last_login']
     }
 
     return render(request, "main.html", context)
@@ -37,6 +37,29 @@ def create_product(request):
         return HttpResponseRedirect(reverse('main:show_main'))
     context = {'form': form}
     return render(request, "create_product.html", context)
+
+def edit_product(request, id):
+    # Get product berdasarkan ID
+    product = Product.objects.get(pk = id)
+
+    # Set product sebagai instance dari form
+    form = ProductForm(request.POST or None, instance=product)
+
+    if form.is_valid() and request.method == "POST":
+        # Simpan form dan kembali ke halaman awal
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "edit_product.html", context)
+
+def delete_product(request, id):
+    # Get data berdasarkan ID
+    product = Product.objects.get(pk = id)
+    # Hapus data
+    product.delete()
+    # Kembali ke halaman awal
+    return HttpResponseRedirect(reverse('main:show_main'))
 
 def show_xml(request):
     data = Product.objects.all()
@@ -86,4 +109,3 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('main:login'))
     response.delete_cookie('last_login')
     return response
-
