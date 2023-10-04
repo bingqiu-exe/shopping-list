@@ -1,110 +1,154 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static 'mysite/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'mysite/css/custom.css' %}">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Shopping List</a>
+      <a class="navbar-brand" href="#">Haeyeon Guild</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+              Action
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Catalog</a></li>
+              <li><a class="dropdown-item" href="#">Add New Product</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#">Cart</a></li>
             </ul>
           </li>
           <li class="nav-item">
             <a href="{% url 'main:logout' %}" aria-disabled="true">
-                <button>
+                <button class="btn btn-outline-success">
                     Logout
                 </button>
             </a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </nav>
+  <div class="container-fluid">
+    <section class="home" id="home">
+      <div class="content">
+        <h1 class="page-name">Haeyeon Guild Page</h1>
+        <p class="description">Our guildmaster, Han Yuhyeon, established this site for all awakeners who wish to wield a guild equipment. Please proceed to the catalog section.</p>
+      </div>
+    </section>
+  </div>
+  <div class="container-fluid"> 
+    <section class="about" id="about">
+      <h1 class="heading"><span>about </span>us</h1>
+      <div class="row">
+        <div class="image">
+          <img src="{% static 'mysite/images/Yuhyeon.png' %}">
+        </div>
+        <div class="content">
+          <p>"My hyung and I established this facility for all awakeners under the Haeyeon Guild, make sure to use this well or els- ah, i mean, good luck."</p>
+          <p>-Guildmaster, Han Yuhyeon</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="container-fluid">
+    <section class="catalog" id="catalog">
+      <h1 class="catalog-title">Catalog</h1>
+      <div class="box-container">
+        <div class="box">
+          <img src="{% static 'mysite/images/Hyeonje.png' %}">
+          <h3>Seong Hyeonje (Fraud)</h3>
+          <p>Our guildmaster's brother doesn't like him...</p>
+          <div class="price"><a>₩10</a></div>
+        </div>
+        <div class="box">
+          <img src="{% static 'mysite/images/eunhye.png' %}"> <!--Yoo Eunhye-->
+          <h3>Yoo Eunhye (L class)</h3>
+          <p>A bluebird that has the ability to transform as an accessory. Eunhye has the nullification ability where it minimizes the damage.</p>
+          <div class="price"><a>₩10000</a></div>
+        </div>
+        <div class="box">
+          <img src="{% static 'mysite/images/parmini.png' %}"> <!--Parmini's Ice Wood Spear-->
+          <h3>Parmini's Ice Wood Spear (S class)</h3>
+          <p>A spear made by a skilled craftsman Yoo Myeongwoo using an old Ice Tree branch that carries a powerful chill</p>
+          <div class="price"><a>₩2000</a></div>
+        </div>
+        <div class="box">
+          <img src="{% static 'mysite/images/red earrings.jpg' %}"> <!--Parmini's Ice Wood Spear-->
+          <h3>Red Earrings (S class)</h3>
+          <p>The earrings has a rare B-rank shield that can be activated by the user.</p>
+          <div class="price"><a>₩1000</a></div>
+        </div>
+      </div>
+    <div class="form">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Date Added</th>
+            </tr>
+        
+            {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
+        
+            {% for product in products %}
+            <tr>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.date_added}}</td>
+                <td>
+                    <a href="{% url 'main:edit_product' product.pk %}">
+                        <button>
+                            Edit
+                        </button>
+                    </a>
+                    <a href="{% url 'main:delete_product' product.pk %}">
+                        <button>
+                            Delete
+                        </button>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
 
-    <h1>Shopping List Page</h1>
-
-    <h5>Name:</h5>
-    <p>{{name}}</p>
-
-    <h5>Class:</h5>
-    <p>{{class}}</p>
-    ...
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Description</th>
-            <th>Date Added</th>
-        </tr>
-    
-        {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-    
-        {% for product in products %}
-        <tr>
-            <td>{{product.name}}/td>
-            <td>{{product.price}}</td>
-            <td>{{product.description}}</td>
-            <td>{{product.date_added}}</td>
-            <td>
-                <a href="{% url 'main:edit_product' product.pk %}">
-                    <button>
-                        Edit
-                    </button>
-                </a>
-                <a href="{% url 'main:delete_product' product.pk %}">
-                    <button>
-                        Delete
-                    </button>
-                </a>
-            </td>
-            <!-- <td>
-        <a href="{% url 'main:edit_product' product.pk %}">
-            <button>
-                Edit
-            </button>
-        </a> -->
-        <!-- <a href="{% url 'main:delete_product' product.pk %}">
-              <button>
-                  Delete
-              </button>
-          </a> -->
-    </td>
-        </tr>
-        {% endfor %}
-    </table>
-    
-    <br />
-    
+        <br />
+    </div>
     <a href="{% url 'main:create_product' %}">
-        <button>
-            Add New Product
-        </button>
-    </a>
-    <h5>Sesi terakhir login: {{ last_login }}</h5>
-    <!-- <a href="{% url 'main:logout' %}">
-        <button>
-            Logout
-        </button>
-    </a> -->
-{% endblock content %}
+      <button class="btn btn-outline-success">
+          Add New Product
+      </button>
+  </a>
+    <div class="identity">
+      <h5>Name:</h5>
+      <p>{{name}}</p>
+
+      <h5>Class:</h5>
+      <p>{{class}}</p>
+  </div>
+    <div class="footer">
+        <h5 class="text-center">Sesi terakhir login: {{ last_login }}</h5>
+        <p class="text-center">Copyright &copy; Furina Wanter :D (and Webtoon)</p>
+        {% endblock content %}
+    </div>
+</body>

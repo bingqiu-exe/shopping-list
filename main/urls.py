@@ -5,6 +5,7 @@ from main.views import login_user #sesuaikan dengan nama fungsi yang dibuat
 from main.views import logout_user
 from main.views import edit_product
 from main.views import delete_product
+
 #from django.contrib.auth.decorators import login_required
 
 app_name = 'main'

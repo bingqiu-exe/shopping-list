@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Fanwood+Text:ital@0;1&family=Yeseva+One&family=Zilla+Slab+Highlight:wght@400;700&display=swap');
+
+/* *{
+	font-family: 'Caprasimo', cursive;
+	font-family: 'Fanwood Text', serif;
+	font-family: 'Yeseva One', cursive;
+	font-family: 'Zilla Slab Highlight', serif;
+} */
+
+*{margin: 0; padding: 0;}
+
+body{background-color: #113946;}
+
+.navbar{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+}
+
+.navbar-brand{
+	font-family: 'Yeseva One';
+}
+
+.navbar-nav{
+	margin-left: 800px;
+}
+
+
+
+.login{text-align: center; padding: 50px; margin-top: 20px;}
+    .login h1{font-family: 'Caprasimo'; color: #EAD7BB; font-size: 100px; padding: 50px; font: 40px; text-align: center; margin-left: 40px}
+    .login p{font-family: 'Caprasimo'; color: #EAD7BB; font-size: 40px; padding: 20px; text-align: center;}
+    .login h2{font-family: 'Yeseva One'; color: #F67280; font-size: 40px; padding: 100px; text-align: left; margin-right: 40px;}
+	.login form{padding-left: 100px;}
+	.form-control {
+		width: 100%;
+		padding: 10px;
+		margin-top: 10px;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		font-size: 16px;
+		font-family: 'Yeseva One';
+		color: #EAD7BB;
+	}
+	
+	.login_btn {
+		width: 100%;
+		padding: 10px;
+		margin-top: 20px;
+		background-color: #F67280;
+		color: #EAD7BB;
+		border: none;
+		border-radius: 3px;
+		font-size: 18px;
+		cursor: pointer;
+		font-family: 'Yeseva One';
+	}
+	
+	.login_btn:hover {
+		background-color: #F67280;
+	}
+
+	.m1{
+		font-family: 'Yeseva One';
+		color: #EAD7BB;
+	}
+	.m2{
+		font-family: 'Yeseva One';
+		color: #EAD7BB;
+	}
+	.new-reg{
+		font-family: 'Yeseva One';
+		color: #EAD7BB;
+		font-size: 20px;
+		text-align: center;
+		margin-top: 70px;
+	}

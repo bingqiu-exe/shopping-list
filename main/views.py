@@ -22,7 +22,7 @@ def show_main(request):
         'name': request.user.username, # Nama kamu
         'class': 'PBP B', # Kelas PBP kamu
         'products': products,
-        'last_login': request.COOKIES['last_login']
+        #'last_login': request.COOKIES['last_login']
     }
 
     return render(request, "main.html", context)

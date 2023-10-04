@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Fanwood+Text:ital@0;1&family=Yeseva+One&family=Zilla+Slab+Highlight:wght@400;700&display=swap');
+
+/* *{
+	font-family: 'Caprasimo', cursive;
+	font-family: 'Fanwood Text', serif;
+	font-family: 'Yeseva One', cursive;
+	font-family: 'Zilla Slab Highlight', serif;
+} */
+
+*{margin: 0; padding: 0; width: 100%; box-sizing: border-box;}
+
+body{background-color: #EAD7BB;}
+/* #f0af18 */
+
+.navbar{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+}
+
+.navbar-brand{
+	font-family: 'Yeseva One';
+}
+ 
+.navbar-nav{
+	margin-left: 800px;
+}
+
+section{
+	padding: 2rem;
+}
+
+.heading{
+	text-align: left;
+	color: #765827;
+	text-transform: uppercase;
+	font-family: 'Caprasimo';
+	padding-bottom: 3.5rem;
+	font-size: 4rem;
+}
+	.heading span{
+		color: #113946;
+		text-transform: uppercase;
+	}
+
+.home{
+	min-height: 100vh;
+	min-width: 100vw;
+	display: flex;
+	align-items: center;
+	background-color:#113946;
+	background-size: cover;
+	background-position: left;
+	justify-content: center;
+	text-align: center;
+}
+
+.home .content{max-width: 60rem;}
+	.home .content h1{
+		font-size: 6rem;
+		font-family: 'Yeseva One';
+		text-transform: uppercase;
+		color: #EAD7BB;
+	}
+	.home .content p{
+		font-family: 'Fanwood Text';
+		color: #113946;
+		font-size: 30px;
+		background-color: #FFF2D8;
+		margin-top: 60px;
+	}
+
+	.about .row{
+		display: flex;
+		align-items: left;
+		flex-wrap: wrap;
+	}
+
+		.about .row .image{
+			flex: 1 1 30%;
+			max-width: 30%;
+		}
+
+		.about .row .image img{
+			width: 100%;
+			max-width: 100%;
+		}
+
+		.about .row .content{
+			flex: 1 1 70%;
+			padding: 2rem;
+			margin-top: 70px;
+			font-family: 'Fanwood Text';
+			color: #113946;
+			font-size: 30px;
+			font: bold;
+		}
+		
+.catalog{
+	background-color: #113946;
+	min-height: 100vh;
+	min-width: 100vw;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.catalog-title{
+	font-family: 'Caprasimo';
+	text-align: left;
+	text-transform: uppercase;
+	color: #EAD7BB;
+	font-size: 4rem;
+	padding-top: 3.5rem;
+}
+
+.catalog .box-container{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+	gap: 1.5rem;
+}
+
+.catalog .box-container .box{
+	padding: 5rem;
+	text-align: center;
+	border: var(--border);
+}
+
+	.catalog .box-container .box img{
+		flex: 1 1 30%;
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.catalog .box-container .box h3{
+		color: #EAD7BB;
+		padding: 1rem 0;
+		font-size: 2.5rem;
+		font-family: 'Yeseva One';
+	}
+
+	.catalog .box-container .box p{
+		color: #EAD7BB;
+		padding: 2rem 0;
+		font-family: 'Fanwood Text';
+		font-size: 2rem;
+	}
+	
+	.catalog .box-container .box .price{
+		color: #EAD7BB;
+		font-size: 2.5rem;
+		padding: 5rem 0;
+		padding-bottom: 70px;
+	}
+
+/* .work {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */
+
+/* Apply styles to the table */
+.form table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+	font-family: 'Yeseva One';
+    background-color: #113946;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style table headers */
+.form table th {
+    background-color: #EAD7BB;
+    color: #113946;
+    padding: 10px 20px;
+    text-align: left;
+	vertical-align: middle;
+}
+
+/* Style table rows */
+.form table tr:nth-child(even) {
+    background-color: #FFF2D8;
+}
+
+.form table tr:hover {
+    background-color: #FFF2D8;
+}
+
+/* Style table cells */
+.form table td {
+    padding: 10px 20px;
+	color: #113946;
+}
+
+/* Style buttons */
+.form table button {
+    background-color: #113946;
+    color: #EAD7BB;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.form table button:hover {
+    background-color: #113946; /* Darker shade on hover */
+}
+
+/* Add some spacing between the table and other elements */
+.form {
+    margin-bottom: 20px;
+}
+
+
+/* .form{
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+table, th, td{
+	padding: 1rem;
+}
+
+.form table{
+	width: 82vw;
+	height: 90vh;
+	width: 95%;
+	background-color: #EAD7BB;
+} */
+
+.identity{
+	font-family: 'Fanwood Text';
+	color: #EAD7BB;
+	text-align: center;
+	justify-content: center;
+	padding-top: 70px;
+}
+
+.footer h5{
+	font-family: 'Yeseva One';
+	color: #EAD7BB;
+	text-align: center;
+}
+
+.footer p{
+	font-family: 'Yeseva One';
+	color: #EAD7BB;
+	text-align: center;
+}
