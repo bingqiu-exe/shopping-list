@@ -212,6 +212,9 @@ section{
     margin-bottom: 20px;
 }
 
+.modal-title{
+	color: #EAD7BB;
+}
 
 /* .form{
 	min-height: 100vh;

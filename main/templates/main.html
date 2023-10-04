@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="{% static 'mysite/css/bootstrap.min.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'mysite/css/custom.css' %}">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -99,8 +100,10 @@
           <div class="price"><a>₩1000</a></div>
         </div>
       </div>
-    <div class="form">
-        <table>
+    <!-- <div class="form"> -->
+      <table id="product_table">
+      </table>
+        <!-- <table>
             <tr>
                 <th>Name</th>
                 <th>Price</th>
@@ -130,15 +133,47 @@
                 </td>
             </tr>
             {% endfor %}
-        </table>
-
-        <br />
-    </div>
+        </table> -->
+        <!-- <br />
+    </div> -->
+    </br>
     <a href="{% url 'main:create_product' %}">
       <button class="btn btn-outline-success">
           Add New Product
       </button>
-  </a>
+    </a>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form id="form" onsubmit="return false;">
+                      {% csrf_token %}
+                      <div class="mb-3">
+                          <label for="name" class="col-form-label">Name:</label>
+                          <input type="text" class="form-control" id="name" name="name"></input>
+                      </div>
+                      <div class="mb-3">
+                          <label for="price" class="col-form-label">Price:</label>
+                          <input type="number" class="form-control" id="price" name="price"></input>
+                      </div>
+                      <div class="mb-3">
+                          <label for="description" class="col-form-label">Description:</label>
+                          <textarea class="form-control" id="description" name="description"></textarea>
+                      </div>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+              </div>
+          </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
     <div class="identity">
       <h5>Name:</h5>
       <p>{{name}}</p>
@@ -146,9 +181,48 @@
       <h5>Class:</h5>
       <p>{{class}}</p>
   </div>
-    <div class="footer">
-        <h5 class="text-center">Sesi terakhir login: {{ last_login }}</h5>
-        <p class="text-center">Copyright &copy; Furina Wanter :D (and Webtoon)</p>
-        {% endblock content %}
-    </div>
+  <div class="footer">
+      <h5 class="text-center">Sesi terakhir login: {{ last_login }}</h5>
+      <p class="text-center">Copyright &copy; Furina Wanter :D (and Webtoon)</p>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    async function getProducts() {
+        return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+    }
+    async function refreshProducts() {
+          document.getElementById("product_table").innerHTML = ""
+          const products = await getProducts()
+          let htmlString = `<tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Description</th>
+              <th>Date Added</th>
+          </tr>`
+          products.forEach((item) => {
+              htmlString += `\n<tr>
+              <td>${item.fields.name}</td>
+              <td>${item.fields.price}</td>
+              <td>${item.fields.description}</td>
+              <td>${item.fields.date_added}</td>
+          </tr>` 
+          })
+            
+          document.getElementById("product_table").innerHTML = htmlString
+    }
+    function addProduct() {
+      fetch("{% url 'main:add_product_ajax' %}", {
+      method: "POST",
+      body: new FormData(document.querySelector('#form'))
+      }).then(refreshProducts)
+    
+      document.getElementById("form").reset()
+      return false
+    }
+    refreshProducts()
+    document.getElementById("button_add").onclick = addProduct
+  </script>
 </body>
+{% endblock content %}
