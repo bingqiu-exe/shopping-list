@@ -72,3 +72,29 @@ TUGAS 4
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     3) mengubah potongan kode pada fungsi create_product
     4) mengubah fungsi show_main
+
+
+
+TUGAS 5
+1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+   Element selector adalah salah satu jenis selektor dalam CSS yang digunakan untuk memilih elemen HTML berdasarkan nama elemennya. Penggunaan element selector sifatnya sederhana dan mudah dimengerti secara anda hanya perlu menentukan nama elemen yang ingin Anda gayakan. Selain itu, penggunaan global dalam element selector dapat mengubah tampilan semua elemen dengan nama yang sama secara global di seluruh halaman web Anda. Element selector juga mengikuti aturan semantik secara element selector membantu menjaga struktur dan semantik HTML Anda tetap utuh. Element selector digunakan pada saat mengaplikasikan gaya global pada elemen-elemen dasar di seluruh halaman web.
+   
+2. Jelaskan HTML5 Tag yang kamu ketahui.
+   a. <header> digunakan untuk mendefinisikan bagian atas dari suatu elemen. Biasanya digunakan untuk menyertakan elemen seperti judul situs, logo, dan elemen navigasi di bagian atas halaman.
+   b. <nav> digunakan untuk mengelompokkan elemen-elemen yang berhubungan dengan navigasi di dalam dokumen.
+   c. <main> digunakan untuk mendefinisikan konten utama yang ada di dalam dokumen/elemen HTML.
+   d. <section> digunakan untuk mengelompokkan konten terkait dalam dokumen/elemen.
+   e. <footer> digunakan untuk mendefinisikan bagian bawah atau kaki dari suatu elemen atau bagian dalam dokumen.
+
+3. Jelaskan perbedaan antara margin dan padding.
+  Margin digunakan untuk mengatur jarak antara elemen dengan elemen lain di sekitarnya sedangkan padding digunakan untuk mengatur jarak antara konten elemen dan batas atau tepi elemen itu sendiri.
+
+4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+   Bootstrap digunakan pada saat anda ingin membuat website dengan cepat seperti proyek - proyek kecil dan jika anda tidak memiliki banyak waktu untuk mendesign.
+   Tailwind digunakan pada saat anda ingin membuat website dengan tingkat kustomisasi yang tinggi dalam desain tampilan Anda dan jika Anda siap untuk menghabiskan waktu membangun tampilan Anda dari nol.
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+   - buat folder static untuk menyimpan image, css, dan js (sediakan 3 custom css untuk 3 html yang berbeda)
+   - buat elemen - elemen dengan classnya masing2 sesuai dengan kode yag kemarin untuk mempermudah mendesign website pada css
+   - sertakan tag html untuk deskripsi produk, dll
+   - implementasi 3 css pada 3 html
