@@ -98,3 +98,33 @@ TUGAS 5
    - buat elemen - elemen dengan classnya masing2 sesuai dengan kode yag kemarin untuk mempermudah mendesign website pada css
    - sertakan tag html untuk deskripsi produk, dll
    - implementasi 3 css pada 3 html
+
+
+
+TUGAS 6
+1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+Asynchronous programming mengeksekusi tugas - tugas secara bersamaan atau dalam urutan yang berbeda tanpa menghentikan eksekusi program utama.
+Synchronous programming mengeksekusi tugas-tugas secara satu per satu dalam urutan tertentu. Saat tugas tertentu sedang berjalan, program akan "menghentikan" eksekusi sampai tugas tersebut selesai.
+   
+3. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+Paradigma event-driven programming adalah suatu pendekatan dalam mengembangkan perangkat lunak di mana program merespons events yang terjadi, seperti interaksi pengguna, masukan pengguna, atau perubahan status.
+Contoh penerapan paradigma event-driven programming adalah klik tombol (ketika kita membuat sebuah tombol di halaman web dengan javascript, kita dapat menetapkan fungsi yang akan dijalankan ketika tombol tersebut diklik) dan AJAX request (dalam penggunaan AJAX, kita mengirimkan permintaan HTTP asinkron ke server dan menentukan fungsi yang akan dijalankan ketika respons dari server diterima)
+
+5. Jelaskan penerapan asynchronous programming pada AJAX.
+Asynchronous programming pada AJAX:
+a) asynchronous request handling
+Ketika Anda menggunakan AJAX untuk mengirim permintaan ke server, Anda dapat mengatur permintaan tersebut sebagai asinkron. Ini berarti bahwa program JavaScript akan melanjutkan eksekusi tanpa menunggu respons dari server.
+b) event handling
+Setelah Anda mengirim permintaan asinkron, Anda juga dapat mengatur event listener untuk menangani respons ketika server mengirimkan data kembali.
+c) callback functions
+Anda dapat menentukan fungsi yang akan dipanggil ketika respons dari server sudah tersedia. Ini memungkinkan Anda untuk merespons data yang diterima secara asinkron dan melakukan tindakan yang sesuai, seperti pembaruan antarmuka pengguna.
+
+7. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+a) Kompatibilitas: jQuery adalah pustaka yang sudah lama digunakan dalam pengembangan web dan kompatibel dengan sebagian besar browser yang ada. Sementara Fetch API juga kompatibel dengan mayoritas browser modern, ada beberapa browser lama yang mungkin tidak mendukungnya sepenuhnya. Jadi, jika Anda perlu mendukung browser yang sangat tua, jQuery mungkin lebih unggul dalam hal ini.
+b) Ringan dan Kinerja: Fetch API adalah bagian dari standar JavaScript, dan karena itu, lebih ringan dan kinerjanya biasanya lebih baik daripada jQuery. Hal ini terutama penting dalam aplikasi web yang memerlukan responsifitas tinggi.
+c) Sintaksis dan Kesederhanaan: Fetch API menawarkan sintaksis yang lebih modern dan sederhana. Ini membuatnya lebih mudah dipelajari dan digunakan, terutama jika Anda sudah terbiasa dengan JavaScript. jQuery memiliki sintaksis tersendiri yang kadang-kadang dianggap lebih rumit.
+d) Ukuran dan Kinerja: Fetch API memiliki ukuran yang lebih kecil karena tidak memuat banyak fitur tambahan seperti yang dimiliki jQuery. Ini berarti aplikasi Anda akan mengunduh lebih cepat dan memiliki kebutuhan memori yang lebih kecil.
+e) Ekosistem dan Plugin: jQuery memiliki ekosistem yang kaya dengan banyak plugin dan ekstensi yang siap pakai. Jika Anda memerlukan fungsionalitas tambahan, ada peluang besar bahwa sudah ada plugin jQuery yang sesuai. Dalam hal ini, jQuery mungkin lebih nyaman.
+f) Maintenance dan Kedepan: jQuery, meskipun masih digunakan secara luas, tidak lagi banyak berkembang dan diperbarui seperti pada masa lalu. Sebagai hasilnya, Fetch API, sebagai bagian dari JavaScript modern, mungkin lebih relevan dalam jangka panjang karena akan terus menerima perbaikan dan peningkatan.
+
+9. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
