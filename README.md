@@ -1,5 +1,8 @@
 # shopping-list
-TUGAS 3
+
+
+
+# TUGAS 3
 1. Apa perbedaan antara form POST dan form GET dalam Django?
  Dalam metode pengiriman data, form POST digunakan untuk mengirim data ke server sedangkan form GET digunakan untuk membaca atau mengambil data dari web server.
 2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
@@ -26,7 +29,7 @@ screenshot:
 ![image](https://github.com/bingqiu-exe/shopping-list/assets/113889689/ab744131-7617-4787-a73f-dec53389948d)
 ![image](https://github.com/bingqiu-exe/shopping-list/assets/113889689/5085cbab-8348-4b88-af1a-009c17a089d1)
 
-TUGAS 4
+# TUGAS 4
 1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
    UserCreationForm adalah sebuah formulir yang digunakan untuk membuat proses pembuatan pengguna (user) lebih mudah dalam aplikasi web, dengan informasi seperti username, password, dan email. Kelebihan yang didapatkan dari UserCreationForm adalah mudah digunakan (membuat formulir tanpa harus menulis kode dari awal), validasi otomatis (validasi yang memastikan bahwa pengguna memasukkan informasi yang benar), konfigurasi kustom (kita dapat menyesuaikan UserCreationForm sesuai dengan kemauan kita), dan integrasi dengan django authentication (kita dapat dengan mudah mengelola authetication). Kekurangan yang ada pada UserCreationForm diantaranya adalah tampilan default tidak menarik dan tidak mendukung fitur lanjutan
 2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
@@ -75,7 +78,7 @@ TUGAS 4
 
 
 
-TUGAS 5
+# TUGAS 5
 1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
    Element selector adalah salah satu jenis selektor dalam CSS yang digunakan untuk memilih elemen HTML berdasarkan nama elemennya. Penggunaan element selector sifatnya sederhana dan mudah dimengerti secara anda hanya perlu menentukan nama elemen yang ingin Anda gayakan. Selain itu, penggunaan global dalam element selector dapat mengubah tampilan semua elemen dengan nama yang sama secara global di seluruh halaman web Anda. Element selector juga mengikuti aturan semantik secara element selector membantu menjaga struktur dan semantik HTML Anda tetap utuh. Element selector digunakan pada saat mengaplikasikan gaya global pada elemen-elemen dasar di seluruh halaman web.
    
@@ -101,7 +104,7 @@ TUGAS 5
 
 
 
-TUGAS 6
+# TUGAS 6
 1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
 Asynchronous programming mengeksekusi tugas - tugas secara bersamaan atau dalam urutan yang berbeda tanpa menghentikan eksekusi program utama.
 Synchronous programming mengeksekusi tugas-tugas secara satu per satu dalam urutan tertentu. Saat tugas tertentu sedang berjalan, program akan "menghentikan" eksekusi sampai tugas tersebut selesai.
