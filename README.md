@@ -131,3 +131,12 @@ e) jQuery memiliki lebih banyak plugin dan ekstensi yang siap pakai daripada Fet
 f) jQuery tidak memiliki banyak maintenance daripada Fetch API yang memerlukan banyak pengubahan.
 
 8. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+a) buat fungsi baru pada views.py dengan nama get_product_json dan add_product_ajax yang menerima parameter request.
+b) impor from django.views.decorators.csrf import csrf_exempt di berkas views.py.
+c) tambahkan @csrf_exempt di atas fungsi add_product_ajax
+d) impor fungsi get_product_json serta add_product_ajax di urls.py dan tambahkan pathnya
+e) hapus kode table yang tugas kemarin lalu tambahkan kode "<table id="product_table"></table>" di kolom table
+f) buat block <Script> di bagian bawah berkas dan buat fungsi baru bernama getProducts() pada block <Script>
+g) buat fungsi baru pada block <Script> dengan nama refreshProducts()
+h) tambahkan kode pada bootstrap dan tambahkan kode button
+i) buat fungsi baru pada block <Script> dengan nama addProduct()
