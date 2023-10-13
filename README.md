@@ -123,11 +123,11 @@ c) callback functions
 Anda dapat menentukan fungsi yang akan dipanggil ketika respons dari server sudah tersedia. Ini memungkinkan Anda untuk merespons data yang diterima secara asinkron dan melakukan tindakan yang sesuai, seperti pembaruan antarmuka pengguna.
 
 7. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
-a) Kompatibilitas: jQuery adalah pustaka yang sudah lama digunakan dalam pengembangan web dan kompatibel dengan sebagian besar browser yang ada. Sementara Fetch API juga kompatibel dengan mayoritas browser modern, ada beberapa browser lama yang mungkin tidak mendukungnya sepenuhnya. Jadi, jika Anda perlu mendukung browser yang sangat tua, jQuery mungkin lebih unggul dalam hal ini.
-b) Ringan dan Kinerja: Fetch API adalah bagian dari standar JavaScript, dan karena itu, lebih ringan dan kinerjanya biasanya lebih baik daripada jQuery. Hal ini terutama penting dalam aplikasi web yang memerlukan responsifitas tinggi.
-c) Sintaksis dan Kesederhanaan: Fetch API menawarkan sintaksis yang lebih modern dan sederhana. Ini membuatnya lebih mudah dipelajari dan digunakan, terutama jika Anda sudah terbiasa dengan JavaScript. jQuery memiliki sintaksis tersendiri yang kadang-kadang dianggap lebih rumit.
-d) Ukuran dan Kinerja: Fetch API memiliki ukuran yang lebih kecil karena tidak memuat banyak fitur tambahan seperti yang dimiliki jQuery. Ini berarti aplikasi Anda akan mengunduh lebih cepat dan memiliki kebutuhan memori yang lebih kecil.
-e) Ekosistem dan Plugin: jQuery memiliki ekosistem yang kaya dengan banyak plugin dan ekstensi yang siap pakai. Jika Anda memerlukan fungsionalitas tambahan, ada peluang besar bahwa sudah ada plugin jQuery yang sesuai. Dalam hal ini, jQuery mungkin lebih nyaman.
-f) Maintenance dan Kedepan: jQuery, meskipun masih digunakan secara luas, tidak lagi banyak berkembang dan diperbarui seperti pada masa lalu. Sebagai hasilnya, Fetch API, sebagai bagian dari JavaScript modern, mungkin lebih relevan dalam jangka panjang karena akan terus menerima perbaikan dan peningkatan.
+a) jQuery merupakan pustaka yang kompatibel dengan sebagian besar browser yang sudah lama digunakan dalam pengembangan web. Sedangkan, Fetch API hanya kompatibel dengan mayoritas browser modern sehingga ada beberapa browser lama yang mungkin sudah tidak kompatibel lagi.
+b) Fetch API merupakan bagian dari JavaScript sehingga kerjanya lebih ringan dan lebih baik daripada jQuery.
+c) Fetch API memiliki sintaks yang lebih modern dan sederhana daripada jQuery. 
+d) Fetch API memiliki kapasitas memory yang lebih kecil daripada jQuery.
+e) jQuery memiliki lebih banyak plugin dan ekstensi yang siap pakai daripada Fetch API.
+f) jQuery tidak memiliki banyak maintenance daripada Fetch API yang memerlukan banyak pengubahan.
 
-9. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+8. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
